@@ -4,5 +4,5 @@ class Booking < ApplicationRecord
 
   # validates :price, :status, presence: true
   validates :start_date, :end_date, availibility: false
-  valdiates :boat, uniqueness: { scope: :start_date }
+  validates :boat, uniqueness: { scope: :start_date }
 end

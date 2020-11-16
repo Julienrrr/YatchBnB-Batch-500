@@ -1,21 +1,27 @@
 class BookingsController < ApplicationController
 
-# def index
-# @bookings = Booking.where
-# end
+def index
+  #  user_id = current_user.id
+  #  @bookings = Booking.where(user_id: user_id)
+  # @user = User.find(session[:user_id])
+  current_user.bookings
+  # @booking.user = current_user
+  # @bookings = Booking.where(current_user)
+end
 
 def new
-    @booking = Booking.new
+  @boat = Boat.find(params[:boat_id])
+  @booking = Booking.new
 end
 
 def create
   @boat = Boat.find(params[:boat_id])
   @booking = Booking.new(booking_params)
+  @booking.user = current_user
   @booking.boat = @boat
-  @booking.save
-    if @booking.save
-      redirect_to boat_path(@boat)
-    else 
+   if @booking.save
+     redirect_to boats_path(@boat)
+   else 
       render :new
     end
 end
