@@ -1,0 +1,4 @@
+<%= link_to 'Add a boat', new_boat_path %>
+<% @boats.each do |boat| %>
+<%= link_to boat.name, boat_path(boat) %>
+<% end %>
