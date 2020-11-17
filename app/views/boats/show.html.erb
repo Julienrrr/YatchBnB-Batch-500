@@ -1,6 +1,6 @@
 <%= @boat.name %>
-<%= @boat.description %>
-<%= @boat.price_per_day %>
+<li><%= @boat.description %></li>
+<li><%= @boat.price_per_day %>€ per day</li>
 <%= link_to 'Back', boats_path %>
 <%= link_to'Edit', edit_boat_path(@boat)%>
 <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
