@@ -1,25 +1,44 @@
 
-<% current_user.bookings.each do |booking| %>
-<div class="booking-card">
-  <div class="information">
-  <ul style="list-style-type:none;">
-    <li><strong><%= booking.boat.name%></strong> </li>
-    <li>Dates: <%= booking.start_date%> / <%= booking.end_date%></li>
-    <li>Duration: <%= booking.duration %> days</li>
-    <li>Price per day<%= booking.boat.price_per_day %> €</li>
-    <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
+<div class="container">
+  <% current_user.bookings.each do |booking| %>
+  <div class="booking-card">
+    <%booking.boat.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
-      <div class="btn btn-warning"> <%= booking.status%> </div>
-      <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
-      <div class="btn btn-primary">
-        Delete
-      </div></li> 
-      <% end %>
-  </ul>
-  </div>
-   <div class="description_card"><li>Description: <%= booking.boat.description %></li></div>
+     <div class="information">
+        <ul style="list-style-type:none;">
+          <li><strong><%= booking.boat.name%></strong> </li>
+          <li>Dates: <%= booking.start_date%> / <%= booking.end_date%></li>
+          <li>Duration: <%= booking.duration %> days</li>
+          <li>Price per day: <%= booking.boat.price_per_day %> €</li>
+          <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
+
+          <div class="btn btn-warning" style="margin-top: 8px"> <%= booking.status%> </div>
+            <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <div class="btn btn-primary" style="margin-top: 8px">
+            Delete
+          </div></li> 
+          <% end %>
+      </ul>
+      </div>
+   <div class="description_card" style="list-style-type:none;">
+      <li>Description: <%= booking.boat.description %></li>
    </div>
-<% end %>
+    <div class="ratings d-flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+    </div>
 
-<%= link_to 'Back', boats_path %>
+    <div class="details btn btn-primary d-flex">
+      details
+    </div>
 
+  </div> 
+   <% end %>
+  <%= link_to 'Back', boats_path %>
+  </div> 
+</div>
