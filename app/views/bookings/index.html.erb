@@ -2,14 +2,14 @@
 <div class="container">
   <% current_user.bookings.each do |booking| %>
   <div class="booking-card">
-    <%booking.boat.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% booking.boat.photos.each do |photo| %>
+    <div class="booking-img"><%= cl_image_tag photo.key, height: 180, width: 200 %></div>
     <% end %>
 
      <div class="information">
         <ul style="list-style-type:none;">
           <li><strong><%= booking.boat.name%></strong> </li>
-          <li>Dates: <%= booking.start_date%> / <%= booking.end_date%></li>
+          <li>Dates: <%= booking.start_date.strftime("%m/%d/%Y")%> to <%= booking.end_date.strftime("%m/%d/%Y")%></li>
           <li>Duration: <%= booking.duration %> days</li>
           <li>Price per day: <%= booking.boat.price_per_day %> €</li>
           <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="details btn btn-primary d-flex">
-      details
+    details
     </div>
 
   </div> 
