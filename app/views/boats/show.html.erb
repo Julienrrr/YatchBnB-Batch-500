@@ -5,14 +5,21 @@
 <% @boat.photos.each do |photo| %>
 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
-<%= @boat.description %><%= @boat.price_per_day %>€ per day%>
+<%= @boat.description %> <%= @boat.price_per_day %>€ per day
 
 <%= link_to 'Back', boats_path %>
+
+<% if policy(@boat).edit? %>
 <%= link_to'Edit', edit_boat_path(@boat)%>
+<% end %>
+
+<% if policy(@boat).destroy? %>
 <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
   <div class="btn btn-primary">
     Delete
   </div>
+<% end %>
+
 <%= link_to "Add booking", new_boat_booking_path(@boat) %>
 <%= link_to "Show bookings", boat_bookings_path(@boat) %>
   <% end %>
