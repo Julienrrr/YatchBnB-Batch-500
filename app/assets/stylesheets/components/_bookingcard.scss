@@ -1,0 +1,23 @@
+.booking-card {
+    height: 220px;
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 20px 0px 20px;
+    padding: 15px;
+    position: relative;
+    
+}
+
+.ratings {
+   position: absolute;
+   top: 35px;
+   right: 35px;
+}
+
+.details {
+    position: absolute;
+    right: 40px;
+    top: 75px;
+}
