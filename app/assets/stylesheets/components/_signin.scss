@@ -1,0 +1,59 @@
+.signin-container {
+background-color: white;
+margin: auto;
+border: solid 1px grey;
+margin-top: 35px;
+padding: 25px 80px;
+border-radius: 15px;
+box-shadow: 0 3px 15px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+width: 500px;
+height: 385px;
+position: relative;
+}
+
+.sign-in {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sign-in.form-actions {
+  border: solid 0.5px grey;
+  text-align: center;
+  background-color: #a57a7a;
+  border-radius: 5px;
+}
+
+.form-group.password.optional.user_password {
+  margin-bottom: 0;
+}
+
+.btn-sign-in input {
+  color: white;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.link {
+  margin-bottom: 10px;
+}
+
+.link a {
+  color: grey;
+}
+
+.link p {
+    width: 100%;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    margin-top: 10px;
+    text-align: center;
+    bottom: 0px;
+}

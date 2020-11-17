@@ -1,12 +1,8 @@
 class BookingsController < ApplicationController
 
 def index
-  #  user_id = current_user.id
-  #  @bookings = Booking.where(user_id: user_id)
-  # @user = User.find(session[:user_id])
   current_user.bookings
-  # @booking.user = current_user
-  # @bookings = Booking.where(current_user)
+ 
 end
 
 def new
@@ -19,7 +15,7 @@ def create
   @booking = Booking.new(booking_params)
   @booking.user = current_user
   @booking.boat = @boat
-   if @booking.save
+   if @booking.save!
      redirect_to boats_path(@boat)
    else 
       render :new
@@ -41,13 +37,13 @@ def destroy
     @booking = Booking.find(params[:id])
     @boat = @booking.boat
     @booking.destroy
-    redirect_to boat_path(@boat)
+    redirect_to boat_bookings_path(@boat)
 end
 
 private
 
 def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :duration)
 end
 
 end
