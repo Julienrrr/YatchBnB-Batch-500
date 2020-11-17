@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
 
 def index
   current_user.bookings
- 
 end
 
 def new
@@ -15,7 +14,7 @@ def create
   @booking = Booking.new(booking_params)
   @booking.user = current_user
   @booking.boat = @boat
-   if @booking.save!
+   if @booking.save
      redirect_to boats_path(@boat)
    else 
       render :new

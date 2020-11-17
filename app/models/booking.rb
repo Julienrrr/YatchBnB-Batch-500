@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :boat
 
-  # validates :price, :status, presence: true
+  validates :status, presence: true, inclusion: { in: ["pending", "accepted", "refused"]}
   validates :start_date, :end_date, availibility: false
   validates :boat, uniqueness: { scope: :start_date }
   before_save :set_duration

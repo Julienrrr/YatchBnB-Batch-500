@@ -1,12 +1,24 @@
 
 <% current_user.bookings.each do |booking| %>
-<li><strong><%= booking.price %>€</strong> excl. taxes pour un séjour de  <strong><%= booking.duration %> jours</strong>
-<%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
-  <div class="btn btn-primary">
-    Delete
+<div class="booking-card">
+  <div class="information">
+  <ul style="list-style-type:none;">
+    <li><strong><%= booking.boat.name%></strong> </li>
+    <li>Dates: <%= booking.start_date%> / <%= booking.end_date%></li>
+    <li>Duration: <%= booking.duration %> days</li>
+    <li>Price per day<%= booking.boat.price_per_day %> €</li>
+    <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
+
+      <div class="btn btn-warning"> <%= booking.status%> </div>
+      <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <div class="btn btn-primary">
+        Delete
+      </div></li> 
+      <% end %>
+  </ul>
   </div>
-  </li>
-  <% end %>
+   <div class="description_card"><li>Description: <%= booking.boat.description %></li></div>
+   </div>
 <% end %>
 
 <%= link_to 'Back', boats_path %>
