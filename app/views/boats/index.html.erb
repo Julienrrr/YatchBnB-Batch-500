@@ -17,9 +17,7 @@
       <% @boats.each do |boat| %>
         <div class="card-trip">
           <div class="card-trip-img">
-            <% boat.photos.each do |photo| %>
-            <div class="boat-img"><%= cl_image_tag photo.key, height: 200, width: 345 %></div>
-            <% end %>
+            <div class="boat-img"><%= cl_image_tag boat.photos[0].key, height: 200, width: 345 %></div>
           </div>
 
           <div class="card-trip-infos">
