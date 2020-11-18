@@ -1,0 +1,22 @@
+$gray: #F4F4F4;
+$spacer: 8px;
+
+body {
+  background: $gray; // Using this variable
+}
+
+.grid_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 22px;
+    width: 100%;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.boat-img {
+ text-align: center;
+ padding: 10px;
+}
