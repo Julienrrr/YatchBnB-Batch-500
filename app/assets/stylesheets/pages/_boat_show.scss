@@ -13,7 +13,6 @@ h1 {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
-  background-color: red;
 }
 .btn-back {
   width: 100px;
@@ -29,6 +28,12 @@ h1 {
   background-color: white;
   border: solid 2px blue;
   border-radius: 20px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  display: inline-block;
 }
 .container{
   display: flex;
