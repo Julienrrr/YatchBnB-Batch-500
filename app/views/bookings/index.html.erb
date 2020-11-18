@@ -1,7 +1,7 @@
-
+<div class="container-all">
 <div class="container-boats">
 
- <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div> 
+ <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
   <% current_user.bookings.each do |booking| %>
   <div class="booking-card">
     <% booking.boat.photos.each do |photo| %>
@@ -20,7 +20,7 @@
             <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
           <div class="btn btn-primary" style="margin-top: 8px">
             Delete
-          </div></li> 
+          </div></li>
           <% end %>
       </ul>
       </div>
@@ -39,8 +39,9 @@
     <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
     </div>
 
-  </div> 
+  </div>
    <% end %>
 
-  </div> 
+  </div>
+</div>
 </div>

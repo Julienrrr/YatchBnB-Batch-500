@@ -1,4 +1,4 @@
-<%= simple_form_for [ @boat ] do |f| %>
+<div class="container-all"><%= simple_form_for [ @boat ] do |f| %>
   <%= f.input :name%>
   <%= f.input :boat_model%>
   <%= f.input :description%>
@@ -8,3 +8,4 @@
   <%= f.submit "Create", class: "btn btn-primary" %>
 <% end %>
 <%= link_to 'Back', boats_path %>
+</div>

@@ -2,13 +2,15 @@ $gray: #F4F4F4;
 $spacer: 8px;
 
 body {
-  background: $gray; // Using this variable
+  background: $gray;
+  position: relative; // Using this variable
 }
 
 .container-boats {
   width: 1080px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 150px;
 }
 
 
