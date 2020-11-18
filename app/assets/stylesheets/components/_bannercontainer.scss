@@ -1,9 +1,22 @@
 .banner-container {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/271681/pexels-photo-271681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url(https://images.pexels.com/photos/271681/pexels-photo-271681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   height: 400px;
   background-size: cover;
   margin: auto;
-  margin-top: -46px;
+  margin-top: -50px;
   /* width: 700px; */
   // filter: grayscale(75%);
+}
+
+.btn-banner h3 {
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 3px 12px;
+  background-color: #ffffff;
+  margin-left: 40px;
+  color: black;
+}
+
+.btn-banner a:hover {
+  text-decoration: none;
 }
