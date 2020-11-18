@@ -29,50 +29,63 @@
       </div>
       <div class="infos">
         <div class="name">
-            <h1>"<%= @boat.name %>"</h1>
+            <h1><%= @boat.name %></h1>
         </div>
         <div class="description">
-          <h5>Description</h5>
+          <p><%= @boat.boat_model %></p>
+          <h5><strong>Description</strong></h5>
+          <br>
           <%= @boat.description %>
         </div>
+        <br>
         <ul>
           <li>
             <i class="fas fa-user-friends"> <%=@boat.capacity %></i>
           </li>
           <li>
-            <i class="fas fa-euro-sign"><%=@boat.price_per_day%></i>
+            <i class="fas fa-euro-sign"><%=@boat.price_per_day%> per day</i>
           </li>
         </ul>
-        <div class="book">
-            <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
-          <div class="btn btn-primary btn-book">
-            Book
+        <div class="book-container">
+          <div class="book">
+              <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
+            <div class="btn btn-primary btn-book">
+              Book
+            </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
     </div>
 
-<div class="edit">
-    <% if policy(@boat).edit? %>
-    <%= link_to edit_boat_path(@boat) do %>
-      <div class="btn btn-primary">
-        Edit
-      </div>
-    <% end %>
-    <% end %>
-  </div>
+<div class="container-btns">
+  <div class="edit">
+      <% if policy(@boat).edit? %>
+      <%= link_to edit_boat_path(@boat) do %>
+        <div class="btn btn-primary btns">
+          Edit
+        </div>
+      <% end %>
+      <% end %>
+    </div>
 
-  <div class="delete">
-    <% if policy(@boat).destroy? %>
-    <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
-      <div class="btn btn-primary">
-        Delete
-      </div>
-    <% end %>
-    <% end %>
-  </div>
+    <div class="delete">
+      <% if policy(@boat).destroy? %>
+      <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <div class="btn btn-primary btns">
+          Delete
+        </div>
+      <% end %>
+      <% end %>
+    </div>
 
-  <%= link_to "Show bookings", boat_bookings_path(@boat) %>
+    <div class="edit">
+      <%= link_to boat_bookings_path(@boat) do %>
+        <div class="btn btn-primary btns">
+          My bookings
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 </div>
