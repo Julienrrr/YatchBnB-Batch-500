@@ -1,4 +1,44 @@
+
+<body>
+  
+<div class="container">
+<div class="searchbar ">
+    <form novalidate="novalidate" id="search" class="simple_form search d-flex-row justify-content-center" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+</div>
+
 <%= link_to 'Add a boat', new_boat_path %>
-<% @boats.each do |boat| %>
-<li><%= link_to boat.name, boat_path(boat) %></li>
-<% end %>
+
+    <div class="grid_cards">
+      <% @boats.each do |boat| %>
+    <div class="card-trip">
+      <img src="boat.photos" class="card-trip-img">
+       <div class="card-trip-infos">
+        <div>
+        <h2><%= link_to boat.name, boat_path(boat) %></h2>
+            <div class="ratings-boats">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+        <div style="text-align: center">
+          <h2><strong><%= boat.price_per_day %>€ per day</strong></h2>
+          <div class="btn" style="margin-top: 8px">
+          <div class="><%= link_to "Add booking", new_boat_booking_path(boat)%></div>
+          </div>
+        </div>        
+      <img src="https://avatars2.githubusercontent.com/u/70326393?s=400&u=a255359e8cec9c450d3bff09418717642dccd820&v=4" alt="Avatar Juls" class="card-trip-infos-avatar">
+      </div>
+      </div>
+      <% end %>
+    </div>
+</body>
+</div>
