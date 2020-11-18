@@ -17,7 +17,12 @@
     <div class="grid_cards">
       <% @boats.each do |boat| %>
     <div class="card-trip">
-      <img src="boat.photos" class="card-trip-img">
+    <div class="card-trip-img">
+    <% boat.photos.each do |photo| %>
+    <div class="boat-img"><%= cl_image_tag photo.key, height: 160, width: 300 %></div>
+    <% end %>
+
+    </div>
        <div class="card-trip-infos">
         <div>
         <h2><%= link_to boat.name, boat_path(boat) %></h2>
