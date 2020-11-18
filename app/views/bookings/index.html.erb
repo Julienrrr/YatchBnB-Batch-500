@@ -4,25 +4,27 @@
  <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
   <% current_user.bookings.each do |booking| %>
   <div class="booking-card">
-    <% booking.boat.photos.each do |photo| %>
+    <% booking.boat.photos[0].each do |photo| %>
     <div class="booking-img"><%= cl_image_tag photo.key, height: 180, width: 200 %></div>
     <% end %>
 
      <div class="information">
-        <ul style="list-style-type:none;">
+        <ul class="infos-booking" style="padding-inline-start: 10px; list-style-type:none;">
           <li><strong><%= booking.boat.name%></strong> </li>
           <li>Dates: <%= booking.start_date.strftime("%m/%d/%Y")%> to <%= booking.end_date.strftime("%m/%d/%Y")%></li>
           <li>Duration: <%= booking.duration %> days</li>
           <li>Price per day: <%= booking.boat.price_per_day %> €</li>
           <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
-
-          <div class="btn btn-warning" style="margin-top: 8px"> <%= booking.status%> </div>
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <div class="btn btn-primary" style="margin-top: 8px">
-            Delete
-          </div></li>
-          <% end %>
       </ul>
+
+         <div style="padding-left: 5px"><div class="btn btn-warning" style="margin-top: 8px"> <%= booking.status%> </div>
+            <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
+         <div class="btn btn-primary" style="margin-top: 8px">
+            Delete
+          </div>
+          </div>
+          </div>
+          <% end %>
       </div>
    <div class="description_card" style="list-style-type:none;">
       <li>Description: <%= booking.boat.description %></li>
