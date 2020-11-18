@@ -1,7 +1,7 @@
 
 <body>
   
-<div class="container">
+<div class="container-boats">
 <div class="searchbar ">
     <form novalidate="novalidate" id="search" class="simple_form search d-flex-row justify-content-center" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
         <div class="search-form-control form-group">
@@ -11,18 +11,19 @@
           </button>
         </div>
 </div>
-
-<%= link_to 'Add a boat', new_boat_path %>
+<div class="btn btn-boats" style="margin-top: 8px">
+<div class="new-boat"><%= link_to 'Add a boat', new_boat_path %></div>
+</div>
 
     <div class="grid_cards">
       <% @boats.each do |boat| %>
     <div class="card-trip">
     <div class="card-trip-img">
     <% boat.photos.each do |photo| %>
-    <div class="boat-img"><%= cl_image_tag photo.key, height: 160, width: 300 %></div>
+    <div class="boat-img"><%= cl_image_tag photo.key, height: 200, width: 345 %></div>
     <% end %>
-
     </div>
+
        <div class="card-trip-infos">
         <div>
         <h2><%= link_to boat.name, boat_path(boat) %></h2>
@@ -35,9 +36,9 @@
             </div>
         </div>
         <div style="text-align: center">
-          <h2><strong><%= boat.price_per_day %>€ per day</strong></h2>
-          <div class="btn" style="margin-top: 8px">
-          <div class=""><%= link_to "Add booking", new_boat_booking_path(boat)%></div>
+          <h2><%= boat.price_per_day %>€ per day</h2>
+          <div class="btn btn-boats" style="margin-top: 8px">
+          <div class="new-booking"><%= link_to "Add Booking", new_boat_booking_path(boat)%></div>
           </div>
         </div>        
       <img src="https://avatars2.githubusercontent.com/u/70326393?s=400&u=a255359e8cec9c450d3bff09418717642dccd820&v=4" alt="Avatar Juls" class="card-trip-infos-avatar">

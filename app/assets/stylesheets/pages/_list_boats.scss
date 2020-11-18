@@ -5,6 +5,13 @@ body {
   background: $gray; // Using this variable
 }
 
+.container-boats {
+  width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .grid_cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -12,11 +19,26 @@ body {
     width: 100%;
 }
 
-h2 {
+.card-trip h2 {
   font-weight: bold;
 }
 
 .boat-img {
  text-align: center;
- padding: 10px;
+ border-radius: 4px;
+}
+
+.new-booking a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-boats {
+padding: 8px 8px;
+margin-bottom: 4px;
+}
+
+.new-boat a {
+  color: white;
+  text-decoration: none;
 }
