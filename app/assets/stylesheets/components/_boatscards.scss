@@ -1,0 +1,57 @@
+.card-trip-img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+.card-trip { 
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    position: relative;
+}
+
+.card-trip h2 {
+    font-size: 16px;
+    justify-content: center;
+    color: #1e45c799;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.card-trip p {
+    font-size: small;
+    color: #15800899;
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.card-trip-infos-avatar {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #8fc58ff7;
+}
+
+.ratings-boats {
+    top: 35px;
+    right: 35px;
+ }
+
+ 
