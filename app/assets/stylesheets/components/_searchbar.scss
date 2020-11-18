@@ -14,7 +14,7 @@
     align-items: center;
   }
   
-  .btn {
+  .btn-search {
     top: 8px;
     bottom: 8px;
     right: 8px;
@@ -26,7 +26,7 @@
     margin-left: 6px;
   }
 
-  .btn:hover {
+  .btn-search:hover {
     opacity: 1;
     border-radius: 15px;
     transition: background 0.8s cubic-bezier(0.68, -0.02, 0.98, 1.08);
