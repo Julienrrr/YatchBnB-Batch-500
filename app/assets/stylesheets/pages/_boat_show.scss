@@ -1,8 +1,53 @@
-.test {
-  color: red;
+.page-container {
+  width: 1140px;
+  margin: 30px auto;
+  display: block;
+  }
+h1 {
+    font-family: "Inter-Bold",-apple-system,BlinkMacSystemFont,Roboto,sans-serif,"Helvetica","Arial";
+    font-size: 24px;
+    line-height: 32px;
+    color: #343A40;
 }
-
+.bandeau {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.btn-back {
+  width: 100px;
+  color: blue;
+  background-color: white;
+  border: solid 2px blue;
+  border-radius: 20px;
+  margin-left: 15px;
+}
+.btn-book {
+  width: 100px;
+  color: blue;
+  background-color: white;
+  border: solid 2px blue;
+  border-radius: 20px;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  }
 .carousel {
 max-width: 400px;
 max-height: 300px;
 }
+.infos {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+.infos {
+  display: block;
+  align-items: flex-start;
+  text-align: left;
+  padding: 15px 25px;
+  margin: 5px auto;
+}
+
