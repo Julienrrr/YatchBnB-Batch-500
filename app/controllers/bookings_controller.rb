@@ -16,7 +16,7 @@ def create
   @booking.boat = @boat
   authorize @booking
   if @booking.save
-    redirect_to boats_path(@boat)
+    redirect_to boat_bookings_path(@boat)
   else
     render :new
   end
