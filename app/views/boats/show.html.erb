@@ -35,9 +35,14 @@
           <h5>Description</h5>
           <%= @boat.description %>
         </div>
-        <div class="price">
-          <%= @boat.price_per_day %>
-        </div>
+        <ul>
+          <li>
+            <i class="fas fa-user-friends"> <%=@boat.capacity %></i>
+          </li>
+          <li>
+            <i class="fas fa-euro-sign"><%=@boat.price_per_day%></i>
+          </li>
+        </ul>
         <div class="book">
             <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
           <div class="btn btn-primary btn-book">
