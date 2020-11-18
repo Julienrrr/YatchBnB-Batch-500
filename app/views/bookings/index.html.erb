@@ -1,7 +1,7 @@
-
+<div class="container-all">
 <div class="container-boats">
 
- <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div> 
+ <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
   <% current_user.bookings.each do |booking| %>
   <div class="booking-card">
     <% booking.boat.photos[0].each do |photo| %>
@@ -23,6 +23,7 @@
             Delete
           </div>
           </div>
+          </div>
           <% end %>
       </div>
    <div class="description_card" style="list-style-type:none;">
@@ -40,8 +41,9 @@
     <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
     </div>
 
-  </div> 
+  </div>
    <% end %>
 
-  </div> 
+  </div>
+</div>
 </div>
