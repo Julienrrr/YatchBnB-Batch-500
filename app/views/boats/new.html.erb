@@ -1,11 +1,18 @@
-<div class="container-all"><%= simple_form_for [ @boat ] do |f| %>
-  <%= f.input :name%>
-  <%= f.input :boat_model%>
-  <%= f.input :description%>
-  <%= f.input :capacity%>
-  <%= f.input :price_per_day%>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Create", class: "btn btn-primary" %>
-<% end %>
-<%= link_to 'Back', boats_path %>
+<div class="container-all">
+  <div class="container_new_boat">
+    <%= simple_form_for [ @boat ] do |f| %>
+      <%= f.input :name%>
+      <%= f.input :boat_model%>
+      <%= f.input :description%>
+      <%= f.input :capacity%>
+      <%= f.input :price_per_day%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <div class="btn-create-new-boat">
+        <%= f.submit "Create", class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="link-back">
+    <%= link_to 'Back', boats_path%>
+  </div>
 </div>

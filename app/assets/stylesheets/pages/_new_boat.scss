@@ -1,0 +1,38 @@
+.container_new_boat {
+  background-color: white;
+  margin: auto;
+  border: solid 1px grey;
+  margin-top: 35px;
+  padding: 25px 80px;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  width: 500px;
+  height: 600px;
+  position: relative;
+}
+
+.btn-create-new-boat {
+  border: solid 0.5px grey;
+  text-align: center;
+  background-color: #a57a7a;
+  border-radius: 5px;
+}
+
+.btn-create-new-boat input {
+  color: white;
+}
+
+.width-image-boat {
+  width: 50px;
+}
+
+input#boat_photos {
+  overflow: hidden;
+}
+
+.link-back a {
+  color: black;
+  display: flex;
+  justify-content: center;
+  margin-top: 19px;
+}
