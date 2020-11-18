@@ -50,3 +50,47 @@ h5, .h5 {
   font-size: 17px;
   margin-bottom: 0;
 }
+
+.dropdown-menu.dropdown-menu-right.show {
+    border-radius: 10px;
+    margin-top: 7px;
+}
+
+.border-bottom-nav {
+  border-bottom: solid 2px #8a8a8a;
+  width: 40px;
+  /* align-items: center; */
+  margin: auto;
+}
+
+// .annonce-navbar p {
+//   margin-top: 5px;
+//   font-size: 14px;
+//   color: black;
+//   margin-right: 22px;
+// }
+
+.navbar-nav a {
+  text-decoration: none;
+  margin-right: 22px;
+  font-size: 14px;
+  color: black;
+  margin-top: 3px;
+  border-radius: 25px;
+  padding: 2px 9px;
+  &:hover {
+    background-color: #ffffff47;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
