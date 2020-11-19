@@ -35,8 +35,9 @@
     </div>
 
     <div class="details btn btn-primary d-flex">
-    <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
+      <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
     </div>
+    <div><%= link_to 'New review', new_booking_review_path(booking) %></div>
 
   </div>
    <% end %>

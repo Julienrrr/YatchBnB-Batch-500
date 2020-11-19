@@ -35,11 +35,11 @@ def update
 end
 
 def destroy
-    @booking = Booking.find(params[:id])
-    authorize @booking
-    @boat = @booking.boat
-    @booking.destroy
-    redirect_to boat_bookings_path(@boat)
+  @booking = Booking.find(params[:id])
+  authorize @booking
+  @boat = @booking.boat
+  @booking.destroy
+  redirect_to boat_bookings_path(@boat)
 end
 
 private

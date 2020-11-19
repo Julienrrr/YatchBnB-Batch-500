@@ -82,13 +82,17 @@
     </div>
 
     <div class="edit">
-      <%= link_to boat_bookings_path(@boat) do %>
+      <%= link_to bookings_path do %>
         <div class="btn btn-primary btns">
           My bookings
         </div>
       <% end %>
     </div>
   </div>
+
+  <% @boat.reviews.each do |review| %>
+  <%= review.content%>
+  <% end %>
 
 </div>
 </div>
