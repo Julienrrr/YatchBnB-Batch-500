@@ -37,14 +37,21 @@ end
 def destroy
   @booking = Booking.find(params[:id])
   authorize @booking
-  @boat = @booking.boat
   @booking.destroy
   redirect_to bookings_path
 end
 
+def update_status
+  @booking = Booking.find(params[:id])
+  @booking.update(status:params[:status])
+  skip_authorization
+  redirect_to dashboard_path
+end
+
+
 private
 
 def booking_params
-  params.require(:booking).permit(:start_date, :end_date)
+  params.require(:booking).permit(:start_date, :end_date,)
 end
 end
