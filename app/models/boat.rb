@@ -1,4 +1,6 @@
 class Boat < ApplicationRecord
+  geocoded_by :address
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
@@ -6,6 +8,8 @@ class Boat < ApplicationRecord
 
   validates :name, :boat_model, :capacity, :description, :price_per_day, :photos, presence: true
   validates :capacity, numericality: true
+
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
 
