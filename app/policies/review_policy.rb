@@ -6,10 +6,10 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def new?
-    create?
+    record.booking.user == user
   end
 
   def create?
-    record.booking.user == user && record.booking.review.nil?
+    record.booking.user == user
   end
 end
