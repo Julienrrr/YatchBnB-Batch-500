@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :boat
+  has_one :review
 
   validates :status, presence: true, inclusion: { in: ["pending", "accepted", "refused"]}
   validates :start_date, :end_date, availibility: false
