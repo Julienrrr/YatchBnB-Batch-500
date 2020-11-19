@@ -89,3 +89,14 @@ max-height: 300px;
   display: flex;
   justify-content: center;
 }
+.review {
+  width: 600px;
+  border-bottom: 1px solid grey;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+}
+.stars {
+  font-size: 10px;
+}
