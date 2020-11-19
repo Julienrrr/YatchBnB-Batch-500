@@ -11,6 +11,9 @@
     <div class="container">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <p>Proposed by <%= @boat.user.first_name.capitalize%></p>
+        <% @boat.set_rating.times do  %>
+         <i class="fas fa-star"></i>
+        <% end %>
         <div class="carousel-inner">
             <% @boat.photos.each_with_index do |photo, index| %>
             <div class="carousel-item  <%= 'active' if index == 0%> ">
@@ -91,7 +94,17 @@
   </div>
 
   <% @boat.reviews.each do |review| %>
-  <%= review.content%>
+  <div class="review">
+    <div class="review-header">
+      <%= review.booking.user.first_name.capitalize %>
+      <div class="stars">
+        <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+    </div>
+    <%= review.content%>
+  </div>
   <% end %>
 
 </div>

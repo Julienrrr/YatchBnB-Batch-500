@@ -6,4 +6,20 @@ class Boat < ApplicationRecord
 
   validates :name, :boat_model, :capacity, :description, :price_per_day, :photos, presence: true
   validates :capacity, numericality: true
+
+  def set_rating
+    total = 0
+    self.bookings.each do |booking|
+      if booking.review
+        total += booking.review.rating
+      end
+    end
+    count = 0
+    self.bookings.each do |booking|
+      if booking.review
+        count += 1
+      end
+    end
+    self.rating = total / count
+  end
 end
