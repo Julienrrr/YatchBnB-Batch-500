@@ -7,6 +7,14 @@ class Boat < ApplicationRecord
   validates :name, :boat_model, :capacity, :description, :price_per_day, :photos, presence: true
   validates :capacity, numericality: true
 
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_and_boat_model_and_description,
+  against: [ :name, :boat_model, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def set_rating
     total = 0
     self.bookings.each do |booking|
