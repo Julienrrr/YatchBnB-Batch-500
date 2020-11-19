@@ -5,6 +5,12 @@ class BoatsController < ApplicationController
     else
       @boats = policy_scope(Boat)
     end
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def new
@@ -50,6 +56,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:user, :boat_model, :name, :description, :capacity, :price_per_day, photos: [])
+    params.require(:boat).permit(:user, :boat_model, :name, :address, :description, :capacity, :price_per_day, photos: [])
   end
 end
