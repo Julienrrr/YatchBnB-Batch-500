@@ -6,3 +6,41 @@
 margin-top: -12px;
 }
 
+.status-infos {
+    margin-left: 76px;
+    margin-top: 30px;
+}
+
+.pdg {
+background: orange;
+width: 120px;
+text-align: center;
+color: white;
+border-radius: 10px;
+font-weight: bold;
+}
+
+.accp {
+  background: rgba(2, 126, 53, 0.822);
+  width: 120px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.ref {
+    background: rgba(150, 6, 6, 0.822);
+    width: 120px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 165px;
+}
