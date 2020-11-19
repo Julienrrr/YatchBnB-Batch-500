@@ -16,7 +16,7 @@ def create
   @booking.boat = @boat
   authorize @booking
   if @booking.save
-    redirect_to boat_bookings_path(@boat)
+    redirect_to bookings_path
   else
     render :new
   end
@@ -39,7 +39,7 @@ def destroy
   authorize @booking
   @boat = @booking.boat
   @booking.destroy
-  redirect_to boat_bookings_path(@boat)
+  redirect_to bookings_path
 end
 
 private
