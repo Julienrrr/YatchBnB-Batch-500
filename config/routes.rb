@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :destroy] do
+    member do 
+      patch "update_status", to: "bookings#update_status"
+    end
     resources :reviews, only: [:new, :create]
   end
+
+  get "/dashboard", to: "dashboards#dashboard"
 end

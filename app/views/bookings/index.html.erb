@@ -15,7 +15,7 @@
           <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
       </ul>
 
-         <div style="padding-left: 5px"><div class="btn btn-warning" style="margin-top: 8px"> <%= booking.status%> </div>
+         <div style="padding-left: 5px"><div class="satus-infos" style="margin-top: 8px"> <%= booking.status%> </div>
             <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
          <div class="btn btn-primary" style="margin-top: 8px">
             Delete
