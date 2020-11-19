@@ -15,29 +15,37 @@
           <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
       </ul>
 
-         <div style="padding-left: 5px"><div class="satus-infos" style="margin-top: 8px"> <%= booking.status%> </div>
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
-         <div class="btn btn-primary" style="margin-top: 8px">
-            Delete
+         <% if booking.status == "pending" %>
+           <div><div class="status-infos pdg"> <%= booking.status%> </div>
+         <% elsif booking.status == "accepted" %>
+            <div><div class="status-infos accp"> <%= booking.status%> </div>
+         <% else booking.status == "refused" %>
+           <div><div class="status-infos ref" > <%= booking.status%> </div>
+         <% end %>
+         
          </div>
-         </div>
-          <% end %>
       </div>
    <div class="description_card" style="list-style-type:none;">
       <li>Description: <%= booking.boat.description %></li>
    </div>
-    <div class="ratings d-flex">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-    </div>
+   
+   <div class="actions">
+      <div class="ratings">
+         <div class="ratings-boats">
+            <%booking.boat.set_rating.times do  %>
+               <i class="fas fa-star"></i>
+            <% end %>
+         </div>
+         </div>
 
-    <div class="details btn btn-primary d-flex">
-      <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
-    </div>
-    <div><%= link_to 'New review', new_booking_review_path(booking) %></div>
+      <div><%= link_to 'New review', new_booking_review_path(booking) %></div>
+        <div class="details btn btn-primary d-flex">
+          <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
+       </div>
+      <%= link_to "Remove", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
+   </div>
+
+    
 
   </div>
    <% end %>
