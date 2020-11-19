@@ -20,6 +20,10 @@ class Boat < ApplicationRecord
         count += 1
       end
     end
+    if count == 0
+      self.rating = 0
+    else
     self.rating = total / count
+    end
   end
 end
