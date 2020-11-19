@@ -81,16 +81,18 @@ h5, .h5 {
   border-radius: 25px;
   padding: 2px 9px;
   &:hover {
-    background-color: #afafaf7a;
+    background-color: #5858587a;
 
   }
 }
 
-
-
-
-
-
+.burger-btn {
+    align-items: center;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
 
 
 

@@ -31,4 +31,10 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  $('.navicon').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('navicon--active');
+    $('.toggle').toggleClass('toggle--active');
+});
 });
