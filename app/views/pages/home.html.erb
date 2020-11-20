@@ -1,20 +1,46 @@
-<div class="banner-container">
-  <div class="current-user">
+<div class="container-all">
+
+  <div class="banner-container">
+    <div class="current-user">
     <% if user_signed_in?%>
       <h1>Hello <%= current_user.first_name.capitalize %> !</h1>
     <% else %>
       <h1>Welcome to YachtBnb</h1>
-  <% end %>
-  <div class="border-top"></div>
-  </div>
-  <p>Partez en <strong>croisière</strong> sur le yacht de vos rèves...</p>
-  <div class="btn btn-banner">
+    <% end %>
+      <div class="border-top"></div>
+    </div>
+
+    <p>Partez en <strong>croisière</strong> sur le yacht de vos rèves...</p>
+    <div class="btn btn-banner">
     <%= link_to boats_path do %>
       <h3>Découvrir les bateaux à proximité</h3>
     <% end %>
+    </div>
   </div>
-</div>
 
-<div class="banner-info-boat">
-  <!-- <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium pariatur quas vel atque quo praesentium aspernatur quis nostrum quaerat, repudiandae laboriosam fuga animi, ab ex ratione blanditiis eveniet minima unde.</h5> -->
+  <div class="banner-info-boat">
+    <h2>COMMENT CA FONCTIONNE?</h2>
+  </div>
+
+  <div class="container-cards">
+    <div class="cards">
+      <div class="card">
+        <img src="" alt="">
+        <h4>test 1</h4>
+        <p>ceci est un test</p>
+      </div>
+      <div class="card">
+        <img src="" alt="">
+        <h4>test 2</h4>
+        <p>ceci est un test</p>
+      </div>
+      <div class="card">
+        <img src="" alt="">
+        <h4>test 3</h4>
+        <p>ceci est un test</p>
+      </div>
+    </div>
+  </div>
+
+
 </div>

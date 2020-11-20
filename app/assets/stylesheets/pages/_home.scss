@@ -22,10 +22,40 @@
   font-family: 'Open Sans', sans-serif;
   color: white;
   margin-left: 50px;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 20px;
 }
 
 .container-all {
   height: 200vh;
+}
+
+.banner-info-boat h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.container-cards {
+  width: 900px;
+  margin: auto;
+}
+
+.cards {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
 }
