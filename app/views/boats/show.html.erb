@@ -1,6 +1,8 @@
 <div class="container-all">
   <div class="padding-show">
-
+  <div class="link-back-show">
+      <%= link_to 'Back', boats_path%>
+  </div>
     <div class="page-container">
       <div class="container-carousel">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -50,7 +52,7 @@
         <div class="book-container">
           <div class="book">
             <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
-            <div class="btn btn-primary btn-book">
+            <div class="btn  btn-book">
               I want this boat !
             </div>
             <% end %>
@@ -62,7 +64,7 @@
           <div class="edit">
             <% if policy(@boat).edit? %>
             <%= link_to edit_boat_path(@boat) do %>
-              <div class="btn btn-primary btns">
+              <div class="btn btns">
                 Edit
               </div>
             <% end %>
@@ -72,7 +74,7 @@
           <div class="delete">
             <% if policy(@boat).destroy? %>
             <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <div class="btn btn-primary btns">
+              <div class="btn btns">
                 Delete
               </div>
             <% end %>
@@ -98,9 +100,5 @@
       </div>
     </div>
   <% end %>
-
-  <div class="link-back">
-    <%= link_to 'Back', boats_path%>
-  </div>
 
 </div>
