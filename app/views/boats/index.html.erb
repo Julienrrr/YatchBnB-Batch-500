@@ -1,19 +1,24 @@
 <div class="container-boats">
   <div class="container ">
-    <%= form_tag boats_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a yacht"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+
+     <%= form_tag boats_path, method: :get do %>
+     <div class="searchboats">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a yacht"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    </div>
   </div>
 
-  <div class="btn btn-boats" style="margin-top: 8px">
-  <div class="new-boat"><%= link_to 'Add a boat', new_boat_path %></div>
-
+  <div id="map"
+     style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
     <div class="grid_cards">
       <% @boats.each do |boat| %>
         <div class="card-trip">
@@ -43,9 +48,5 @@
       </div>
       <% end %>
   </div>
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+  
 </div>
