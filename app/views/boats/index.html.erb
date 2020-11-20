@@ -8,7 +8,7 @@
         class: "form-control",
         placeholder: "Find a yacht"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn-boats" %>
     <% end %>
     </div>
   </div>
@@ -27,7 +27,7 @@
           </div>
 
           <div class="card-trip-infos">
-            <div>
+            <div style="width: 170px">
               <h2><%= link_to boat.name, boat_path(boat) %></h2>
               <div class="ratings-boats">
                 <%boat.set_rating.times do  %>
