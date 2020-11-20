@@ -1,6 +1,10 @@
 <div class="container-all">
 <div class="container-boats">
 
+<div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
+
+<h2 class="requests-title">Requests for my boat: </h2>
+
 <% current_user.requests.each do |request| %>
 
 <div class="booking-card">
@@ -31,6 +35,11 @@
           </div>
          <% end %>
         </div>
+
+    <% elsif request.status == "accepted" %>
+        <div class="status-request-accp"> <%= request.status%> </div>
+    <% else request.status == "refused" %>
+        <div class="status-request-ref" > <%= request.status%> </div>
     <% end %>
 </div>
    

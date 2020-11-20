@@ -3,6 +3,9 @@
 
   <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
 
+  <h2 class="requests-title">My booking list: </h2>
+
+
   <% current_user.bookings.each do |booking| %>
     <div class="booking-card">
       <div class="booking-img"><%= cl_image_tag booking.boat.photos[0].key, height: 180, width: 200 %></div>
