@@ -1,41 +1,39 @@
-<div class="container-all"><div class="page-container">
-  <div class="bandeau">
-    <div class="back">
-    <%= link_to boats_path do %>
-      <div class="btn btn-primary btn-back">
-        Back
-      </div>
-    <% end %>
-  </div>
-  </div>
-    <div class="container">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <p>Proposed by <%= @boat.user.first_name.capitalize%></p>
-        <% @boat.set_rating.times do  %>
-         <i class="fas fa-star"></i>
-        <% end %>
-        <div class="carousel-inner">
-            <% @boat.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item  <%= 'active' if index == 0%> ">
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-            </div>
+<div class="container-all">
+  <div class="padding-show">
+
+    <div class="page-container">
+      <div class="container-carousel">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="position-ratingname">
+            <% @boat.set_rating.times do %>
+              <i class="fas fa-star"></i>
             <% end %>
+            <p>Proposed by <%= @boat.user.first_name.capitalize%></p>
+          </div>
+          <div class="carousel-inner">
+            <% @boat.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item  <%= 'active' if index == 0%> ">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              </div>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
+
       <div class="infos">
         <div class="name">
-            <h1><%= @boat.name %></h1>
+          <h1><%= @boat.name.capitalize %></h1>
         </div>
         <div class="description">
-          <p><%= @boat.boat_model %></p>
+          <p><%= @boat.boat_model.capitalize %></p>
           <h5><strong>Description</strong></h5>
           <br>
           <%= @boat.description %>
@@ -46,66 +44,63 @@
             <i class="fas fa-user-friends"> <%=@boat.capacity %></i>
           </li>
           <li>
-            <i class="fas fa-euro-sign"><%=@boat.price_per_day%> per day</i>
+            <i class="fas fa-euro-sign"> <%=@boat.price_per_day%> per day</i>
           </li>
         </ul>
         <div class="book-container">
           <div class="book">
-              <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
+            <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
             <div class="btn btn-primary btn-book">
-              Book
+              I want this boat !
             </div>
             <% end %>
           </div>
         </div>
       </div>
-    </div>
-<br>
-<br>
-<br>
-<div class="container-btns">
-  <div class="edit">
-      <% if policy(@boat).edit? %>
-      <%= link_to edit_boat_path(@boat) do %>
-        <div class="btn btn-primary btns">
-          Edit
-        </div>
-      <% end %>
-      <% end %>
+
+      <div class="container-btns">
+          <div class="edit">
+            <% if policy(@boat).edit? %>
+            <%= link_to edit_boat_path(@boat) do %>
+              <div class="btn btn-primary btns">
+                Edit
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+
+          <div class="delete">
+            <% if policy(@boat).destroy? %>
+            <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <div class="btn btn-primary btns">
+                Delete
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+      </div>
+
     </div>
 
-    <div class="delete">
-      <% if policy(@boat).destroy? %>
-      <%= link_to boat_path(@boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <div class="btn btn-primary btns">
-          Delete
-        </div>
-      <% end %>
-      <% end %>
-    </div>
-
-    <div class="edit">
-      <%= link_to bookings_path do %>
-        <div class="btn btn-primary btns">
-          My bookings
-        </div>
-      <% end %>
-    </div>
   </div>
 
+
   <% @boat.reviews.each do |review| %>
-  <div class="review">
-    <div class="review-header">
-      <%= review.booking.user.first_name.capitalize %>
+    <div class="container-reviews">
+      <div class="review-header">
+        <p>Review from: <%= review.booking.user.first_name.capitalize %></p>
+      </div>
+      <%= review.content%>
       <div class="stars">
         <% review.rating.times do %>
-        <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
         <% end %>
       </div>
     </div>
-    <%= review.content%>
-  </div>
   <% end %>
 
-</div>
+  <div class="link-back">
+    <%= link_to 'Back', boats_path%>
+  </div>
+
 </div>
