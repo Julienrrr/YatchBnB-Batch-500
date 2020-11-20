@@ -38,6 +38,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.banner-info-boat {
+  height: 50px;
+}
 
 .container-cards {
   width: 900px;
@@ -45,17 +48,55 @@
 }
 
 .cards {
-  background-color: green;
+  // background-color: green;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  margin-top: 55px;
 }
 
 .card {
-  width: 200px;
+  height: 300px;
+  width: 250px;
   border-radius: 3px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
 }
+
+.container-cards h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 70px;
+  color: #a57a7a;
+  margin-bottom: 20px;
+}
+
+.container-cards h4 {
+  margin-bottom: -15px;
+}
+
+.border-bottom-card {
+  border-bottom: 5px solid grey;
+  width: 50px;
+  margin: auto;
+}
+
+.border-bottom-info-boat {
+  border-bottom: 9px solid grey;
+  width: 70px;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
