@@ -1,7 +1,12 @@
+ <div class="container-all">
+  <div class="container_new_boat">
+ 
  <%= simple_form_for [@booking, @review]  do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :content %>
+    <%= f.input :rating, placeholder: "enter rating between 1 and 5"%>
+    <%= f.input :content, placeholder: "plese write your review" %>
     <div class="form-btn-submit">
       <%= f.submit "Submit", class: "btn btn-primary" %>
     </div>
   <% end %>
+</div>
+  </div>
