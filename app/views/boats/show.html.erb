@@ -45,10 +45,28 @@
           <li>
             <i class="fas fa-user-friends"> <%=@boat.capacity %></i>
           </li>
+          <% if @boat.pool  %>
           <li>
-            <i class="fas fa-euro-sign"> <%=@boat.price_per_day%> per day</i>
+            <i class="fas fa-swimmer"> Pool</i>
           </li>
+          <% end %>
+          <% if @boat.heliport %>
+          <li>
+            <i class="fas fa-helicopter"> Heliport</i>
+          </li>
+          <% end %>
+          <% if @boat.staff %>
+          <li>
+            <i class="fas fa-people-carry"> Staff</i>
+          </li>
+          <% end %>
+          <% if @boat.spa %>
+          <li>
+            <i class="fas fa-spa"> Spa</i>
+          </li>
+          <% end %>
         </ul>
+        <i class="fas fa-euro-sign"> <%=@boat.price_per_day%> per day</i>
         <div class="book-container">
           <div class="book">
             <%= link_to new_boat_booking_path(@boat), class: 'test' do %>
