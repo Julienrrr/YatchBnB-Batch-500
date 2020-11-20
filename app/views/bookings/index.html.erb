@@ -1,54 +1,51 @@
 <div class="container-all">
-<div class="container-boats">
+  <div class="container-boats">
 
- <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
+  <div style="margin-top: 5px"><%= link_to 'Back', boats_path %></div>
+
   <% current_user.bookings.each do |booking| %>
-  <div class="booking-card">
-    <div class="booking-img"><%= cl_image_tag booking.boat.photos[0].key, height: 180, width: 200 %></div>
+    <div class="booking-card">
+      <div class="booking-img"><%= cl_image_tag booking.boat.photos[0].key, height: 180, width: 200 %></div>
 
-     <div class="information">
+      <div class="information">
         <ul class="infos-booking" style="padding-inline-start: 10px; list-style-type:none;">
           <li><strong><%= booking.boat.name%></strong> </li>
           <li>Dates: <%= booking.start_date.strftime("%m/%d/%Y")%> to <%= booking.end_date.strftime("%m/%d/%Y")%></li>
           <li>Duration: <%= booking.duration %> days</li>
           <li>Price per day: <%= booking.boat.price_per_day %> €</li>
           <li>Total price: <strong><%= booking.price %>€</strong> excl. taxes </li>
-      </ul>
+        </ul>
 
-         <% if booking.status == "pending" %>
-           <div><div class="status-infos pdg"> <%= booking.status%> </div>
-         <% elsif booking.status == "accepted" %>
-            <div><div class="status-infos accp"> <%= booking.status%> </div>
-         <% else booking.status == "refused" %>
-           <div><div class="status-infos ref" > <%= booking.status%> </div>
-         <% end %>
-         
-         </div>
+        <% if booking.status == "pending" %>
+          <div class="status-infos pdg"> <%= booking.status%> </div>
+        <% elsif booking.status == "accepted" %>
+          <div class="status-infos accp"> <%= booking.status%> </div>
+        <% else booking.status == "refused" %>
+          <div class="status-infos ref" > <%= booking.status%> </div>
+        <% end %>
       </div>
-   <div class="description_card" style="list-style-type:none;">
-      <li>Description: <%= booking.boat.description %></li>
-   </div>
-   
-   <div class="actions">
-      <div class="ratings">
-         <div class="ratings-boats">
-            <%booking.boat.set_rating.times do  %>
-               <i class="fas fa-star"></i>
-            <% end %>
-         </div>
-         </div>
 
-      <div><%= link_to 'New review', new_booking_review_path(booking) %></div>
+      <div class="description_card" style="list-style-type:none;">
+        <li>Description: <%= booking.boat.description %></li>
+      </div>
+
+      <div class="actions">
+        <div class="ratings">
+          <div class="ratings-boats">
+            <%booking.boat.set_rating.times do  %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+        </div>
+
+        <div><%= link_to 'New review', new_booking_review_path(booking) %></div>
         <div class="details btn btn-primary d-flex">
           <div class="new-booking"><%= link_to "details", boat_path(booking.boat)%></div>
-       </div>
-      <%= link_to "Remove", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
-   </div>
-
-    
+        </div>
+        <%= link_to "Remove", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
 
   </div>
-   <% end %>
-  </div>
-</div>
 </div>
